@@ -17,8 +17,8 @@
   <!-- Target Platforms -->
   <!-- Remove to test which platforms build by default. -->
   <platform name="android" />
-  <platform name="ios" />
-  <platform name="winphone" />
+  <!-- <platform name="ios" /> -->
+  <!-- <platform name="winphone" /> -->
 
   <!-- App requested permission -->
   <preference name="permissions" value="none"/>
