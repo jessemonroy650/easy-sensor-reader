@@ -1,7 +1,15 @@
 /*
     Date: 2015-12-25
     2016-02-22 - Detect if we are using Cordova/Phonegap or a browser.
+    2016-05-25 - Added LED13 toggle
 */
+// Global Variables
+var defaultHostIP = "192.168.240.1";
+var hostIP        = "";
+var targetURL     = "";
+var ledState      = 0;
+var ledIntermediateState = "";
+//
 var app = {
     self : {},
     //
