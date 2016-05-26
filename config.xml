@@ -25,7 +25,8 @@
 
   <!-- PLUGINS * PLUGINS * PLUGINS -->
   <!-- spec="" follows the syntax of https://docs.npmjs.com/cli/install -->
-  <plugin name="cordova-plugin-device"        source="npm" spec="1.0.1" />
+  <plugin name="cordova-plugin-device"    source="npm" spec="1.0.1" />
+  <plugin name="cordova-plugin-whitelist" source="npm" spec="1.1.0" />
 
   <!-- WHITELIST * WHITELIST * WHITELIST -->
   <!-- https://github.com/jessemonroy650/top-phonegap-mistakes/blob/master/the-whitelist-system.md -->
