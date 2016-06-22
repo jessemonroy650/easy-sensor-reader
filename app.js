@@ -4,11 +4,8 @@
     2016-05-25 - Added LED13 toggle
 */
 // Global Variables
-var defaultHostIP = "192.168.240.1";
-var hostIP        = "";
-var targetURL     = "";
-var ledState      = 0;
-var ledIntermediateState = "";
+var defaultHostIP   = "192.168.240.1";
+var defaultLoopTime = 5000;   // in milliseconds
 //
 var app = {
     self : {},
