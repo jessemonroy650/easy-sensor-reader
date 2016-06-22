@@ -1,33 +1,39 @@
 /*
     Date: 2016-05-13
+    2016-06-21 - Added Ping
 */
-
-var URLCold   = 'http://192.168.240.1/arduino/analog/0';
-var URLHot    = ''; // 'http://192.168.240.1/arduino/analog/1';
+var URLTemperature   = 'http://' defaultHostIP + '/arduino/iot/thermistor/0';
+var URLPing          = 'http://' defaultHostIP + '/arduino/iot/ultrasound/0';
 var loopTime  = 0;
 var loopCount = 0;
 
 function getReadings () {
+    var distanceReading = '';
     if (loopTime > 0) {
-        if ( URLCold.length > 0 ) {
+        if ( URLTemperature.length > 0 ) {
             loopCount++;
-            $('#readingStatus').text('reading:' + loopCount );
-            $('#gotSensor').text('getting');
-            $.get(URLCold, function (data) {
-                $('#gotSensor').text('cold');
-                $('#temp1').text(data);
+            $('#appStatus').text('reading:' + loopCount );
+            $('#readStatus').text('getting');
+            $.get(URLTemperature, function (data) {
+                $('#readStatus').text('temperature');
+                $('#temperature').text(data);
             });
         }
-        if ( URLHot.length > 0 ) {
-            $('#gotSensor').text('getting');
-            $.get(URLHot, function (data) {
-                $('#gotSensor').text('hot');
-                $('#temp2').text(data);
+        if ( URLPing.length > 0 ) {
+            loopCount++;
+            $('#appStatus').text('reading:' + loopCount );
+            $('#readStatus').text('getting');
+            $.get(URLPing, function (data) {
+                $('#readStatus').text('ping');
+                var cmString = new String(data);
+                var inString = new String(data/0.393701);
+                distanceReading = cmString + "cm (" + inString + "in)";
+                $('#ping').text(data);
             });
         }
         setTimeout(getReadings, loopTime);
     } else {
         loopCount = 0;
-        $('#readingStatus').text('inactive');
+        $('#appStatus').text('inactive');
     }
 }
