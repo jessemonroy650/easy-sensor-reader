@@ -14,18 +14,22 @@
     <button id=exitApp class="button button-pill button-primary button-large">Exit</button>
 </div>
 <div id=bigspace>
-<p><div class=tempWrapper>Temperature #1: <span id=temp1></span></div>
-<p><div class=tempWrapper>Temperature #2: <span id=temp2></span></div>
-<p><div class=tempWrapper>Status: <span id=readingStatus>inactive</span></div>
-<p><div class=tempWrapper>read: <span id=gotSensor>none</span></div>
+<p><div class=tempWrapper>Temperature: <span id=temperature></span></div>
+<p><div class=tempWrapper>Ultrasound: <span id=ping></span></div>
+
+<p><div class=tempWrapper>App: <span id=appStatus>inactive</span></div>
+<p><div class=tempWrapper>Status: <span id=readStatus>none</span></div>
 <p><button id=control class="button button-pill button-action button-large">Start Reading</button>
 
-<center>
-  <p>192.168.240.1
-  <br><img src=http://192.168.240.1/iot/thermistor/images/favicon-48x48.png>
-  <div id=content>LED #13: <span id=led13></span></div>
-  <br><button id=toggle13 class="button button-pill button-action button-large">Toggle</button>
-</center>
+  <center>
+    <p class=smallFont>
+       img <img src=http://192.168.240.1/iot/thermistor/images/favicon-48x48.png> from server (192.168.240.1)
+    </p>
+    <div class=ledWrapper>
+        LED #13: <span id=led13></span><br>
+        <button id=toggle13 class="button button-pill button-action button-small">Toggle</button>
+    </div>
+  </center>
 
 </div>
 <div class="copyright" >
